@@ -30,26 +30,20 @@ module.exports = class extends Generator {
         ];
 
         paths.forEach(path => {
-            fs.readFile(this.templatePath(`store/${path}.ts`), "utf8", (data, err) => {
-                if (err) {
-                    console.error(err);
-                } else {
-                    console.log(data);
-                }
-            })
-
-            // this.copyFilesToDestination(path);
+            this._copyFilesToDestination(path);
         });
-    }
-
-    _parseFile(input) {
-        return input.replace(/\$\{val\}/g, this.answers.name)
     }
 
     _copyFilesToDestination(path) {
-        this.fs.copy(this.templatePath(`store/${path}.ts`), this.destinationPath(`store/${path.replace(/store/, this.answers.name)}.ts`), {
-            title: "templating"
-        });
-        this.fs.copy(this.templatePath(`store/${path}.spec.ts`), this.destinationPath(`store/${path.replace(/store/, this.answers.name)}.spec.ts`));
+        [null, 'spec']
+            .forEach(item => {
+                this.fs.copyTpl(
+                    this.templatePath(`store/${path}.${item ? item + '.' : ''}ts`),
+                    this.destinationPath(`store/${path.replace(/store/, this.answers.name)}.${item ? item + '.' : ''}ts`),
+                    {
+                        componentName: this.answers.name,
+                        ComponentName: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1)
+                    })
+            })
     }
 };
