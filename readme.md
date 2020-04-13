@@ -1,3 +1,16 @@
-Awesome store crud generator.
+# Awesome NGRX Store crud generator. 
 
-This package should help you generate bunch of mess ngrx files.
+## USAGE
+
+* Clone repo
+* Run <code>npm i</code>
+* cd into the repo
+* run <code>npm link </code> if you want use this generator from every directory
+* run <code>yo store</code> and then type your component name. 
+* copy generated folder into your app
+
+Main goal - generate whole NGRX boilderplate with Spectator tests.
+
+** Todo **
+* generator for actions, effects etc.
+
