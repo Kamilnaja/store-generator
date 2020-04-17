@@ -3,7 +3,7 @@ import { State } from '/<%= componentName %>/store/reducers/<%= componentName %>
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export const select<%= ComponentName %>State = createFeatureSelector<State>(from<%= componentName %>.<%= componentName %>FeatureKey);
-export const selectListaDostepow = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getLista<%= ComponentName %>);
+export const selectLista<%= ComponentName %> = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getLista<%= ComponentName %>);
 export const selectLoading = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getLoading);
 export const selectBlad = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getBlad);
-export const selectDostep = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.get<%= ComponentName %>);
+export const select<%= ComponentName %> = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.get<%= ComponentName %>);

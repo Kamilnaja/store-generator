@@ -1,49 +1,53 @@
+/**
+ * @author Kamil Naja
+ */
+
 'use strict';
 var Generator = require('yeoman-generator');
-var fs = require('fs');
 
 module.exports = class extends Generator {
-    async prompting() {
-        this.answers = await this.prompt([
-            {
-                type: 'input',
-                name: 'name',
-                message: 'Your component name',
-                default: this.componentName,
-                store: true
-            }
-        ]);
-        this.log(`You have selected options: ${this.answers.name}`);
-    };
+  async prompting() {
+    this.answers = await this.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Your component name',
+        default: this.componentName,
+        store: true
+      }
+    ]);
+    this.log(`You have selected options: ${this.answers.name}`);
+  };
 
-    writing() {
-        this._prepareWrite();
-    }
+  writing() {
+    this._prepareWrite();
+  }
 
-    _prepareWrite() {
-        const paths = [
-            // `services/store-http.service`,
-            // "actions/store.actions",
-            // "reducers/store.reducer",
-            "selectors/store.selectors",
-            // "effects/store.effects"
-        ];
+  _prepareWrite() {
+    const paths = [
+      `services/store-http.service`,
+      "actions/store.actions",
+      "reducers/store.reducer",
+      "selectors/store.selectors",
+      "effects/store.effects"
+    ];
 
-        paths.forEach(path => {
-            this._copyFilesToDestination(path);
-        });
-    }
+    paths.forEach(path => {
+      this._copyFilesToDestination(path);
+    });
+  }
 
-    _copyFilesToDestination(path) {
-        [null, 'spec']
-            .forEach(item => {
-                this.fs.copyTpl(
-                    this.templatePath(`store/${path}.${item ? item + '.' : ''}ts`),
-                    this.destinationPath(`store/${path.replace(/store/, this.answers.name)}.${item ? item + '.' : ''}ts`),
-                    {
-                        componentName: this.answers.name,
-                        ComponentName: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1)
-                    })
-            })
-    }
+  _copyFilesToDestination(path) {
+    [null, 'spec']
+      .forEach(item => {
+        this.fs.copyTpl(
+          this.templatePath(`store/${path}.${item ? item + '.' : ''}ts`),
+          this.destinationPath(`store/${path.replace(/store/, this.answers.name.toLowerCase())}.${item ? item + '.' : ''}ts`),
+          {
+            componentName: this.answers.name,
+            ComponentName: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1),
+            COMPONENT_NAME: this.answers.name.toUpperCase()
+          })
+      })
+  }
 };
