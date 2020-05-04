@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class <%= ComponentName %>HttpService {
+export class <%= CN %>HttpService {
     private readonly endpointURI = ''
 }
 
 constructor(private httpClient: HttpClient) {}
 
-public pobierzListe(): Observable<<%= ComponentName %>[]> {
-    return this.httpClient.get<<%= ComponentName %>[]>(`${this.endpointURI}/`)
+public pobierzListe(): Observable<<%= CN %>[]> {
+    return this.httpClient.get<<%= CN %>[]>(`${this.endpointURI}/`)
 }

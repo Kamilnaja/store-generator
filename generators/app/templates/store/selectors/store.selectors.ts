@@ -1,9 +1,9 @@
-import * as from<%= componentName %> from '/<%= componentName %>/store/reducers/<%= componentName %>.reducer';
-import { State } from '/<%= componentName %>/store/reducers/<%= componentName %>.reducer';
+import * as from<%= cN %> from '/<%= cN %>/store/reducers/<%= cN %>.reducer';
+import { State } from '/<%= cN %>/store/reducers/<%= cN %>.reducer';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-export const select<%= ComponentName %>State = createFeatureSelector<State>(from<%= componentName %>.<%= componentName %>FeatureKey);
-export const selectLista<%= ComponentName %> = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getLista<%= ComponentName %>);
-export const selectLoading = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getLoading);
-export const selectBlad = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.getBlad);
-export const select<%= ComponentName %> = createSelector(select<%= ComponentName %>State, from<%= ComponentName %>.get<%= ComponentName %>);
+export const select<%= CN %>State = createFeatureSelector<State>(from<%= cN %>.<%= cN %>FeatureKey);
+export const selectLista<%= CN %> = createSelector(select<%= CN %>State, from<%= CN %>.getLista<%= CN %>);
+export const selectLoading = createSelector(select<%= CN %>State, from<%= CN %>.getLoading);
+export const selectBlad = createSelector(select<%= CN %>State, from<%= CN %>.getBlad);
+export const select<%= CN %> = createSelector(select<%= CN %>State, from<%= CN %>.get<%= CN %>);

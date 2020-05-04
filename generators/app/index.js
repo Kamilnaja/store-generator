@@ -44,9 +44,9 @@ module.exports = class extends Generator {
           this.templatePath(`store/${path}.${item ? item + '.' : ''}ts`),
           this.destinationPath(`store/${path.replace(/store/, this.answers.name.toLowerCase())}.${item ? item + '.' : ''}ts`),
           {
-            componentName: this.answers.name,
-            ComponentName: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1),
-            COMPONENT_NAME: this.answers.name.toUpperCase()
+            cN: this.answers.name,
+            CN: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1),
+            C_N: this.answers.name.toUpperCase()
           })
       })
   }

@@ -1,102 +1,102 @@
 import { createAction, props } from '@ngrx/store';
 
-  export enum <%= COMPONENT_NAME %>Actions {
-    POBIERANIE_LISTY_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Pobierz listę <%= ComponentName %>',
-    POBIERANIE_LISTY_<%= COMPONENT_NAME %>_SUKCES = '[<%= COMPONENT_NAME %>] Sukces pobierania listy <%= ComponentName %>',
-    POBIERANIE_LISTY_<%= COMPONENT_NAME %>_BLAD = '[<%= COMPONENT_NAME %>] Bląd pobierania listy <%= ComponentName %>',
+  export enum <%= C_N %>Actions {
+    POBIERANIE_LISTY_<%= C_N %> = '[<%= C_N %>] Pobierz listę <%= CN %>',
+    POBIERANIE_LISTY_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces pobierania listy <%= CN %>',
+    POBIERANIE_LISTY_<%= C_N %>_BLAD = '[<%= C_N %>] Bląd pobierania listy <%= CN %>',
   
-    USUWANIE_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Usuń <%= ComponentName %>',
-    USUWANIE_<%= COMPONENT_NAME %>_SUKCES = '[<%= COMPONENT_NAME %>] Sukces usuwania <%= ComponentName %>',
-    USUWANIE_<%= COMPONENT_NAME %>_BLAD = '[<%= COMPONENT_NAME %>] Błąd usuwania <%= ComponentName %>',
+    USUWANIE_<%= C_N %> = '[<%= C_N %>] Usuń <%= CN %>',
+    USUWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces usuwania <%= CN %>',
+    USUWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd usuwania <%= CN %>',
   
-    EDYTOWANIE_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Edytuj <%= ComponentName %>',
-    EDYTOWANIE_<%= COMPONENT_NAME %>_SUKCES = '[<%= COMPONENT_NAME %>] Sukces edytowania <%= ComponentName %>',
-    EDYTOWANIE_<%= COMPONENT_NAME %>_BLAD = '[<%= COMPONENT_NAME %>] Błąd edytowania <%= ComponentName %>',
+    EDYTOWANIE_<%= C_N %> = '[<%= C_N %>] Edytuj <%= CN %>',
+    EDYTOWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces edytowania <%= CN %>',
+    EDYTOWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd edytowania <%= CN %>',
   
-    ZAPISYWANIE_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Zapisz <%= ComponentName %>',
-    ZAPISYWANIE_<%= COMPONENT_NAME %>_SUKCES = '[<%= COMPONENT_NAME %>] Sukces zapisywania <%= ComponentName %>',
-    ZAPISYWANIE_<%= COMPONENT_NAME %>_BLAD = '[<%= COMPONENT_NAME %>] Błąd zapisywania <%= ComponentName %>',
+    ZAPISYWANIE_<%= C_N %> = '[<%= C_N %>] Zapisz <%= CN %>',
+    ZAPISYWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces zapisywania <%= CN %>',
+    ZAPISYWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd zapisywania <%= CN %>',
   
-    POBIERANIE_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Pobierz pojedyńczy <%= ComponentName %>',
-    POBIERANIE_<%= COMPONENT_NAME %>_SUKCES = '[<%= COMPONENT_NAME %>] Sukces pobierania pojedyńczego <%= ComponentName %>',
-    POBIERANIE_<%= COMPONENT_NAME %>_BLAD = '[<%= COMPONENT_NAME %>] Błąd pobierania pojedyńczego <%= ComponentName %>',
+    POBIERANIE_<%= C_N %> = '[<%= C_N %>] Pobierz pojedyńczy <%= CN %>',
+    POBIERANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces pobierania pojedyńczego <%= CN %>',
+    POBIERANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd pobierania pojedyńczego <%= CN %>',
   
-    WYCZYSC_<%= COMPONENT_NAME %> = '[<%= COMPONENT_NAME %>] Przywrócenie inicjalnej wartości dla <%= ComponentName %> w store'
+    WYCZYSC_<%= C_N %> = '[<%= C_N %>] Przywrócenie inicjalnej wartości dla <%= CN %> w store'
   }
   
-  export const pobierzListe<%= ComponentName %> = createAction(
-    <%= ComponentName %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>,
+  export const pobierzListe<%= CN %> = createAction(
+    <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>,
     props<{numerStrony: number}>()
   );
 
-  export const pobierzListe<%= ComponentName %>Sukces = createAction(
-    <%= ComponentName %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>_SUKCES,
-    props<{ payload: WynikWyszukiwania<%= ComponentName %> }>()
+  export const pobierzListe<%= CN %>Sukces = createAction(
+    <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_SUKCES,
+    props<{ payload: WynikWyszukiwania<%= CN %> }>()
   );
 
-  export const pobierzListe<%= ComponentName %>Blad = createAction(
-    <%= COMPONENT_NAME %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>_BLAD, 
+  export const pobierzListe<%= CN %>Blad = createAction(
+    <%= C_N %>Actions.POBIERANIE_LISTY_<%= C_N %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const wycofaj<%= ComponentName %> = createAction(
-    <%= COMPONENT_NAME %>Actions.USUWANIE_<%= COMPONENT_NAME %>,
-    props<{ idUpowaznionego: string; pochodzenie<%= ComponentName %>: Pochodzenie<%= ComponentName %> }>()
+  export const wycofaj<%= CN %> = createAction(
+    <%= C_N %>Actions.USUWANIE_<%= C_N %>,
+    props<{ idUpowaznionego: string; pochodzenie<%= CN %>: Pochodzenie<%= CN %> }>()
   );
 
-  export const wycofaj<%= ComponentName %>Sukces = createAction(
-    <%= ComponentName %>Actions.USUWANIE_<%= COMPONENT_NAME %>_SUKCES
+  export const wycofaj<%= CN %>Sukces = createAction(
+    <%= CN %>Actions.USUWANIE_<%= C_N %>_SUKCES
   );
 
-  export const wycofaj<%= ComponentName %>Blad = createAction(
-    <%= ComponentName %>Actions.USUWANIE_<%= COMPONENT_NAME %>_BLAD, 
+  export const wycofaj<%= CN %>Blad = createAction(
+    <%= CN %>Actions.USUWANIE_<%= C_N %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const edytuj<%= ComponentName %> = createAction(
-    <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>, 
-    props<{ params: Nowy<%= ComponentName %> }>()
+  export const edytuj<%= CN %> = createAction(
+    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>, 
+    props<{ params: Nowy<%= CN %> }>()
   );
 
-  export const edytuj<%= ComponentName %>Sukces = createAction(
-    <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>_SUKCES
+  export const edytuj<%= CN %>Sukces = createAction(
+    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_SUKCES
   );
 
-  export const edytuj<%= ComponentName %>Blad = createAction(
-    <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>_BLAD, 
+  export const edytuj<%= CN %>Blad = createAction(
+    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const zapisz<%= ComponentName %> = createAction(
-    <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>, 
-    props<{ params: Nowy<%= ComponentName %> }>()
+  export const zapisz<%= CN %> = createAction(
+    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>, 
+    props<{ params: Nowy<%= CN %> }>()
   );
   
-  export const zapisz<%= ComponentName %>Sukces = createAction( 
-    <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>_SUKCES
+  export const zapisz<%= CN %>Sukces = createAction( 
+    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_SUKCES
   );
   
-  export const zapisz<%= ComponentName %>Blad = createAction(
-    <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>_BLAD, 
+  export const zapisz<%= CN %>Blad = createAction(
+    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const pobierz<%= ComponentName %> = createAction(
-    <%= ComponentName %>Actions.POBIERANIE_<%= COMPONENT_NAME %>,
+  export const pobierz<%= CN %> = createAction(
+    <%= CN %>Actions.POBIERANIE_<%= C_N %>,
     props<{ idUpowaznionego: string; rodzajIdentyfikatora: RodzajIdentyfikatora }>()
   );
 
-  export const pobierz<%= ComponentName %>Sukces = createAction(
-    <%= ComponentName %>Actions.POBIERANIE_<%= COMPONENT_NAME %>_SUKCES, 
-    props<{ payload: <%= ComponentName %> }>()
+  export const pobierz<%= CN %>Sukces = createAction(
+    <%= CN %>Actions.POBIERANIE_<%= C_N %>_SUKCES, 
+    props<{ payload: <%= CN %> }>()
   );
 
-  export const pobierz<%= ComponentName %>Blad = createAction(
-    <%= ComponentName %>Actions.POBIERANIE_<%= COMPONENT_NAME %>_BLAD, 
+  export const pobierz<%= CN %>Blad = createAction(
+    <%= CN %>Actions.POBIERANIE_<%= C_N %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const wyczysc<%= ComponentName %> = createAction(
-    <%= ComponentName %>Actions.WYCZYSC_<%= COMPONENT_NAME %>
+  export const wyczysc<%= CN %> = createAction(
+    <%= CN %>Actions.WYCZYSC_<%= C_N %>
   );
   

@@ -1,158 +1,158 @@
-  import * as <%= componentName %> from './<%= componentName %>.actions';
-  import { <%= ComponentName %>Actions } from './<%= componentName %>.actions';
+  import * as <%= cN %> from './<%= cN %>.actions';
+  import { <%= CN %>Actions } from './<%= cN %>.actions';
   
-  const payload: WynikWyszukiwania<%= ComponentName %> = {
+  const payload: WynikWyszukiwania<%= CN %> = {
     liczbaWynikowWyszukania: 2,
   };
-  const nowy<%= ComponentName %>: Nowy<%= ComponentName %> = { };
+  const nowy<%= CN %>: Nowy<%= CN %> = { };
   
-  describe('<%= ComponentName %> Actions', () => {
-    describe('[<%= ComponentName %>] Pobierz listę <%= componentName %> Actions', () => {
-      describe('pobierzListe<%= ComponentName %>', () => {
+  describe('<%= CN %> Actions', () => {
+    describe('[<%= CN %>] Pobierz listę <%= cN %> Actions', () => {
+      describe('pobierzListe<%= CN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.pobierzListe<%= ComponentName %>(null);
+          const action = <%= cN %>.pobierzListe<%= CN %>(null);
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>
+            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>
           });
         });
       });
   
-      describe('pobierzListe<%= ComponentName %>Sukces', () => {
+      describe('pobierzListe<%= CN %>Sukces', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.pobierzListe<%= ComponentName %>Sukces({ payload });
+          const action = <%= cN %>.pobierzListe<%= CN %>Sukces({ payload });
   
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>_SUKCES,
+            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_SUKCES,
             payload
           });
         });
       });
   
-      describe('pobierzListe<%= ComponentName %>Blad', () => {
+      describe('pobierzListe<%= CN %>Blad', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.pobierzListe<%= ComponentName %>Blad({ blad });
+          const action = <%= cN %>.pobierzListe<%= CN %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.POBIERANIE_LISTY_<%= COMPONENT_NAME %>_BLAD,
+            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Usuń <%= componentName %>', () => {
+      describe('[<%= CN %>] Usuń <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.wycofaj<%= ComponentName %>(null);
+          const action = <%= cN %>.wycofaj<%= CN %>(null);
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.USUWANIE_<%= COMPONENT_NAME %>
+            type: <%= CN %>Actions.USUWANIE_<%= C_N %>
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Sukces usuwania <%= componentName %>', () => {
+      describe('[<%= CN %>] Sukces usuwania <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.wycofaj<%= ComponentName %>Sukces();
+          const action = <%= cN %>.wycofaj<%= CN %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.USUWANIE_<%= COMPONENT_NAME %>_SUKCES
+            type: <%= CN %>Actions.USUWANIE_<%= C_N %>_SUKCES
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Błąd usuwania <%= componentName %>', () => {
+      describe('[<%= CN %>] Błąd usuwania <%= cN %>', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.wycofaj<%= ComponentName %>Blad({ blad });
+          const action = <%= cN %>.wycofaj<%= CN %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.USUWANIE_<%= COMPONENT_NAME %>_BLAD,
+            type: <%= CN %>Actions.USUWANIE_<%= C_N %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Edytuj <%= componentName %>', () => {
+      describe('[<%= CN %>] Edytuj <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.edytuj<%= ComponentName %>(null);
+          const action = <%= cN %>.edytuj<%= CN %>(null);
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>
+            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Sukces edytowania <%= componentName %>', () => {
+      describe('[<%= CN %>] Sukces edytowania <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.edytuj<%= ComponentName %>Sukces();
+          const action = <%= cN %>.edytuj<%= CN %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>_SUKCES
+            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_SUKCES
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Błąd edytowania <%= componentName %>', () => {
+      describe('[<%= CN %>] Błąd edytowania <%= cN %>', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.edytuj<%= ComponentName %>Blad({ blad });
+          const action = <%= cN %>.edytuj<%= CN %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.EDYTOWANIE_<%= COMPONENT_NAME %>_BLAD,
+            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Zapisz <%= componentName %>', () => {
+      describe('[<%= CN %>] Zapisz <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.zapisz<%= ComponentName %>({ params: nowy<%= ComponentName %> });
+          const action = <%= cN %>.zapisz<%= CN %>({ params: nowy<%= CN %> });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>,
-            params: nowy<%= ComponentName %>
+            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>,
+            params: nowy<%= CN %>
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Błąd zapisywania <%= componentName %>', () => {
+      describe('[<%= CN %>] Błąd zapisywania <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
           const blad = { message: 'Bląd' };
-          const action = <%= componentName %>.zapisz<%= ComponentName %>Blad({ blad });
+          const action = <%= cN %>.zapisz<%= CN %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>_BLAD,
+            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Sukces zapisywania <%= componentName %>', () => {
+      describe('[<%= CN %>] Sukces zapisywania <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.zapisz<%= ComponentName %>Sukces();
+          const action = <%= cN %>.zapisz<%= CN %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.ZAPISYWANIE_<%= COMPONENT_NAME %>_SUKCES
+            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_SUKCES
           });
         });
       });
   
-      describe('[<%= ComponentName %>] pobierz pojedynczy <%= componentName %>', () => {
+      describe('[<%= CN %>] pobierz pojedynczy <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.pobierz<%= ComponentName %>({
+          const action = <%= cN %>.pobierz<%= CN %>({
             ...
           });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.POBIERANIE_<%= COMPONENT_NAME %>,
+            type: <%= CN %>Actions.POBIERANIE_<%= C_N %>,
             ...
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Błąd pobierania pojedynczego <%= componentName %>', () => {
+      describe('[<%= CN %>] Błąd pobierania pojedynczego <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
           const blad = { message: 'Bląd' };
-          const action = <%= componentName %>.pobierz<%= ComponentName %>Blad({ blad });
+          const action = <%= cN %>.pobierz<%= CN %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= ComponentName %>Actions.POBIERANIE_<%= COMPONENT_NAME %>_BLAD,
+            type: <%= CN %>Actions.POBIERANIE_<%= C_N %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= ComponentName %>] Sukces pobierania pojedynczego <%= componentName %>', () => {
+      describe('[<%= CN %>] Sukces pobierania pojedynczego <%= cN %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= componentName %>.pobierz<%= ComponentName %>Sukces({ payload: payload.lista[0] });
+          const action = <%= cN %>.pobierz<%= CN %>Sukces({ payload: payload.lista[0] });
           expect({ ...action }).toEqual({
             ...
           });
