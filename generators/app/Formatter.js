@@ -18,6 +18,9 @@ module.exports = class Formatter {
       .join('')
   }
 
+  /*
+  * @example 'Hello-darknes-my-old-friend'; => helloDarknesMyOldFriend
+  */
   static lowerCamelCase(val) {
     return val[0] + val
       .slice(1)

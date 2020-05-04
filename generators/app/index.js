@@ -46,7 +46,9 @@ module.exports = class extends Generator {
           {
             separate: Formatter.separateWords(this.answers.name),
             upperCamelCase: Formatter.upperCamelCase(this.answers.name),
+            lowerCamelCase: Formatter.lowerCamelCase(this.answers.name),
             kebabCase: Formatter.kebabCase(this.answers.name),
+            name: this.answers.name
           })
       })
   }
