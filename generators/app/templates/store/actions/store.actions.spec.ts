@@ -1,158 +1,157 @@
-  import * as <%= cN %> from './<%= cN %>.actions';
-  import { <%= CN %>Actions } from './<%= cN %>.actions';
+  import { <%= separate %>Actions } from './<%= separate %>.actions';
   
-  const payload: WynikWyszukiwania<%= CN %> = {
+  const payload: WynikWyszukiwania<%= separate %> = {
     liczbaWynikowWyszukania: 2,
   };
-  const nowy<%= CN %>: Nowy<%= CN %> = { };
+  const nowy<%= separate %>: Nowy<%= separate %> = { };
   
-  describe('<%= CN %> Actions', () => {
-    describe('[<%= CN %>] Pobierz listę <%= cN %> Actions', () => {
-      describe('pobierzListe<%= CN %>', () => {
+  describe('<%= separate %> Actions', () => {
+    describe('[<%= separate %>] Pobierz listę <%= separate %> Actions', () => {
+      describe('pobierzListe<%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.pobierzListe<%= CN %>(null);
+          const action = <%= upperCamelCase %>.pobierzListe<%= upperCamelCase %>(null);
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>
+            type: <%= upperCamelCase %>Actions.POBIERANIE_LISTY_<%= kebabCase %>
           });
         });
       });
   
-      describe('pobierzListe<%= CN %>Sukces', () => {
+      describe('pobierzListe<%= separate %>Sukces', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.pobierzListe<%= CN %>Sukces({ payload });
+          const action = <%= separate %>.pobierzListe<%= separate %>Sukces({ payload });
   
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_SUKCES,
+            type: <%= separate %>Actions.POBIERANIE_LISTY_<%= kebabCase %>_SUKCES,
             payload
           });
         });
       });
   
-      describe('pobierzListe<%= CN %>Blad', () => {
+      describe('pobierzListe<%= separate %>Blad', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.pobierzListe<%= CN %>Blad({ blad });
+          const action = <%= upperCamelCase %>.pobierzListe<%= separate %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_BLAD,
+            type: <%= upperCamelCase %>Actions.POBIERANIE_LISTY_<%= kebabCase %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= CN %>] Usuń <%= cN %>', () => {
+      describe('[<%= separate %>] Usuń <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.wycofaj<%= CN %>(null);
+          const action = <%= separate %>.wycofaj<%= separate %>(null);
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.USUWANIE_<%= C_N %>
+            type: <%= separate %>Actions.USUWANIE_<%= kebabCase %>
           });
         });
       });
   
-      describe('[<%= CN %>] Sukces usuwania <%= cN %>', () => {
+      describe('[<%= separate %>] Sukces usuwania <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.wycofaj<%= CN %>Sukces();
+          const action = <%= separate %>.wycofaj<%= separate %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.USUWANIE_<%= C_N %>_SUKCES
+            type: <%= separate %>Actions.USUWANIE_<%= kebabCase %>_SUKCES
           });
         });
       });
   
-      describe('[<%= CN %>] Błąd usuwania <%= cN %>', () => {
+      describe('[<%= separate %>] Błąd usuwania <%= separate %>', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.wycofaj<%= CN %>Blad({ blad });
+          const action = <%= separate %>.wycofaj<%= separate %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.USUWANIE_<%= C_N %>_BLAD,
+            type: <%= separate %>Actions.USUWANIE_<%= kebabCase %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= CN %>] Edytuj <%= cN %>', () => {
+      describe('[<%= separate %>] Edytuj <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.edytuj<%= CN %>(null);
+          const action = <%= separate %>.edytuj<%= separate %>(null);
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>
+            type: <%= separate %>Actions.EDYTOWANIE_<%= kebabCase %>
           });
         });
       });
   
-      describe('[<%= CN %>] Sukces edytowania <%= cN %>', () => {
+      describe('[<%= separate %>] Sukces edytowania <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.edytuj<%= CN %>Sukces();
+          const action = <%= separate %>.edytuj<%= separate %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_SUKCES
+            type: <%= separate %>Actions.EDYTOWANIE_<%= kebabCase %>_SUKCES
           });
         });
       });
   
-      describe('[<%= CN %>] Błąd edytowania <%= cN %>', () => {
+      describe('[<%= separate %>] Błąd edytowania <%= separate %>', () => {
         const blad = { message: 'Bląd' };
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.edytuj<%= CN %>Blad({ blad });
+          const action = <%= separate %>.edytuj<%= separate %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_BLAD,
+            type: <%= separate %>Actions.EDYTOWANIE_<%= kebabCase %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= CN %>] Zapisz <%= cN %>', () => {
+      describe('[<%= separate %>] Zapisz <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.zapisz<%= CN %>({ params: nowy<%= CN %> });
+          const action = <%= separate %>.zapisz<%= separate %>({ params: nowy<%= separate %> });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>,
-            params: nowy<%= CN %>
+            type: <%= separate %>Actions.ZAPISYWANIE_<%= kebabCase %>,
+            params: nowy<%= separate %>
           });
         });
       });
   
-      describe('[<%= CN %>] Błąd zapisywania <%= cN %>', () => {
+      describe('[<%= separate %>] Błąd zapisywania <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
           const blad = { message: 'Bląd' };
-          const action = <%= cN %>.zapisz<%= CN %>Blad({ blad });
+          const action = <%= separate %>.zapisz<%= separate %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_BLAD,
+            type: <%= separate %>Actions.ZAPISYWANIE_<%= kebabCase %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= CN %>] Sukces zapisywania <%= cN %>', () => {
+      describe('[<%= separate %>] Sukces zapisywania <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.zapisz<%= CN %>Sukces();
+          const action = <%= separate %>.zapisz<%= separate %>Sukces();
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_SUKCES
+            type: <%= separate %>Actions.ZAPISYWANIE_<%= kebabCase %>_SUKCES
           });
         });
       });
   
-      describe('[<%= CN %>] pobierz pojedynczy <%= cN %>', () => {
+      describe('[<%= separate %>] pobierz pojedynczy <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.pobierz<%= CN %>({
+          const action = <%= separate %>.pobierz<%= separate %>({
             ...
           });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.POBIERANIE_<%= C_N %>,
+            type: <%= separate %>Actions.POBIERANIE_<%= kebabCase %>,
             ...
           });
         });
       });
   
-      describe('[<%= CN %>] Błąd pobierania pojedynczego <%= cN %>', () => {
+      describe('[<%= separate %>] Błąd pobierania pojedynczego <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
           const blad = { message: 'Bląd' };
-          const action = <%= cN %>.pobierz<%= CN %>Blad({ blad });
+          const action = <%= separate %>.pobierz<%= separate %>Blad({ blad });
           expect({ ...action }).toEqual({
-            type: <%= CN %>Actions.POBIERANIE_<%= C_N %>_BLAD,
+            type: <%= separate %>Actions.POBIERANIE_<%= kebabCase %>_BLAD,
             blad
           });
         });
       });
   
-      describe('[<%= CN %>] Sukces pobierania pojedynczego <%= cN %>', () => {
+      describe('[<%= separate %>] Sukces pobierania pojedynczego <%= separate %>', () => {
         it('powinno utworzyć akcję', () => {
-          const action = <%= cN %>.pobierz<%= CN %>Sukces({ payload: payload.lista[0] });
+          const action = <%= separate %>.pobierz<%= separate %>Sukces({ payload: payload.lista[0] });
           expect({ ...action }).toEqual({
             ...
           });

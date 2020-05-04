@@ -1,102 +1,102 @@
 import { createAction, props } from '@ngrx/store';
 
-  export enum <%= C_N %>Actions {
-    POBIERANIE_LISTY_<%= C_N %> = '[<%= C_N %>] Pobierz listę <%= CN %>',
-    POBIERANIE_LISTY_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces pobierania listy <%= CN %>',
-    POBIERANIE_LISTY_<%= C_N %>_BLAD = '[<%= C_N %>] Bląd pobierania listy <%= CN %>',
+  export enum <%= upperCamelCase %>Actions {
+    POBIERANIE_LISTY_<%= kebabCase %> = '[<%= separate %>] Pobierz listę <%= separate %>',
+    POBIERANIE_LISTY_<%= kebabCase %>_SUKCES = '[<%= separate %>] Sukces pobierania listy <%= separate %>',
+    POBIERANIE_LISTY_<%= kebabCase %>_BLAD = '[<%= separate %>] Bląd pobierania listy <%= separate %>',
   
-    USUWANIE_<%= C_N %> = '[<%= C_N %>] Usuń <%= CN %>',
-    USUWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces usuwania <%= CN %>',
-    USUWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd usuwania <%= CN %>',
+    USUWANIE_<%= kebabCase %> = '[<%= separate %>] Usuń <%= separate %>',
+    USUWANIE_<%= kebabCase %>_SUKCES = '[<%= separate %>] Sukces usuwania <%= separate %>',
+    USUWANIE_<%= kebabCase %>_BLAD = '[<%= separate %>] Błąd usuwania <%= separate %>',
   
-    EDYTOWANIE_<%= C_N %> = '[<%= C_N %>] Edytuj <%= CN %>',
-    EDYTOWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces edytowania <%= CN %>',
-    EDYTOWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd edytowania <%= CN %>',
+    EDYTOWANIE_<%= kebabCase %> = '[<%= separate %>] Edytuj <%= separate %>',
+    EDYTOWANIE_<%= kebabCase %>_SUKCES = '[<%= separate %>] Sukces edytowania <%= separate %>',
+    EDYTOWANIE_<%= kebabCase %>_BLAD = '[<%= separate %>] Błąd edytowania <%= separate %>',
   
-    ZAPISYWANIE_<%= C_N %> = '[<%= C_N %>] Zapisz <%= CN %>',
-    ZAPISYWANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces zapisywania <%= CN %>',
-    ZAPISYWANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd zapisywania <%= CN %>',
+    ZAPISYWANIE_<%= kebabCase %> = '[<%= separate %>] Zapisz <%= separate %>',
+    ZAPISYWANIE_<%= kebabCase %>_SUKCES = '[<%= separate %>] Sukces zapisywania <%= separate %>',
+    ZAPISYWANIE_<%= kebabCase %>_BLAD = '[<%= separate %>] Błąd zapisywania <%= separate %>',
   
-    POBIERANIE_<%= C_N %> = '[<%= C_N %>] Pobierz pojedyńczy <%= CN %>',
-    POBIERANIE_<%= C_N %>_SUKCES = '[<%= C_N %>] Sukces pobierania pojedyńczego <%= CN %>',
-    POBIERANIE_<%= C_N %>_BLAD = '[<%= C_N %>] Błąd pobierania pojedyńczego <%= CN %>',
+    POBIERANIE_<%= kebabCase %> = '[<%= separate %>] Pobierz pojedyńczy <%= separate %>',
+    POBIERANIE_<%= kebabCase %>_SUKCES = '[<%= separate %>] Sukces pobierania pojedyńczego <%= separate %>',
+    POBIERANIE_<%= kebabCase %>_BLAD = '[<%= separate %>] Błąd pobierania pojedyńczego <%= separate %>',
   
-    WYCZYSC_<%= C_N %> = '[<%= C_N %>] Przywrócenie inicjalnej wartości dla <%= CN %> w store'
+    WYCZYSC_<%= kebabCase %> = '[<%= separate %>] Przywrócenie inicjalnej wartości dla <%= separate %> w store'
   }
   
-  export const pobierzListe<%= CN %> = createAction(
-    <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>,
+  export const pobierzListe<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_LISTY_<%= kebabCase %>,
     props<{numerStrony: number}>()
   );
 
-  export const pobierzListe<%= CN %>Sukces = createAction(
-    <%= CN %>Actions.POBIERANIE_LISTY_<%= C_N %>_SUKCES,
-    props<{ payload: WynikWyszukiwania<%= CN %> }>()
+  export const pobierzListe<%= upperCamelCase %>Sukces = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_LISTY_<%= kebabCase %>_SUKCES,
+    props<{ payload: WynikWyszukiwania<%= upperCamelCase %> }>()
   );
 
-  export const pobierzListe<%= CN %>Blad = createAction(
-    <%= C_N %>Actions.POBIERANIE_LISTY_<%= C_N %>_BLAD, 
+  export const pobierzListe<%= upperCamelCase %>Blad = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_LISTY_<%= kebabCase %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const wycofaj<%= CN %> = createAction(
-    <%= C_N %>Actions.USUWANIE_<%= C_N %>,
-    props<{ idUpowaznionego: string; pochodzenie<%= CN %>: Pochodzenie<%= CN %> }>()
+  export const wycofaj<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.USUWANIE_<%= kebabCase %>,
+    props<{ idUpowaznionego: string; pochodzenie<%= upperCamelCase %>: Pochodzenie<%= upperCamelCase %> }>()
   );
 
-  export const wycofaj<%= CN %>Sukces = createAction(
-    <%= CN %>Actions.USUWANIE_<%= C_N %>_SUKCES
+  export const wycofaj<%= upperCamelCase %>Sukces = createAction(
+    <%= upperCamelCase %>Actions.USUWANIE_<%= kebabCase %>_SUKCES
   );
 
-  export const wycofaj<%= CN %>Blad = createAction(
-    <%= CN %>Actions.USUWANIE_<%= C_N %>_BLAD, 
+  export const wycofaj<%= upperCamelCase %>Blad = createAction(
+    <%= upperCamelCase %>Actions.USUWANIE_<%= kebabCase %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const edytuj<%= CN %> = createAction(
-    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>, 
-    props<{ params: Nowy<%= CN %> }>()
+  export const edytuj<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.EDYTOWANIE_<%= kebabCase %>, 
+    props<{ params: Nowy<%= upperCamelCase %> }>()
   );
 
-  export const edytuj<%= CN %>Sukces = createAction(
-    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_SUKCES
+  export const edytuj<%= upperCamelCase %>Sukces = createAction(
+    <%= upperCamelCase %>Actions.EDYTOWANIE_<%= kebabCase %>_SUKCES
   );
 
-  export const edytuj<%= CN %>Blad = createAction(
-    <%= CN %>Actions.EDYTOWANIE_<%= C_N %>_BLAD, 
+  export const edytuj<%= upperCamelCase %>Blad = createAction(
+    <%= upperCamelCase %>Actions.EDYTOWANIE_<%= kebabCase %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const zapisz<%= CN %> = createAction(
-    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>, 
-    props<{ params: Nowy<%= CN %> }>()
+  export const zapisz<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.ZAPISYWANIE_<%= kebabCase %>, 
+    props<{ params: Nowy<%= upperCamelCase %> }>()
   );
   
-  export const zapisz<%= CN %>Sukces = createAction( 
-    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_SUKCES
+  export const zapisz<%= upperCamelCase %>Sukces = createAction( 
+    <%= upperCamelCase %>Actions.ZAPISYWANIE_<%= kebabCase %>_SUKCES
   );
   
-  export const zapisz<%= CN %>Blad = createAction(
-    <%= CN %>Actions.ZAPISYWANIE_<%= C_N %>_BLAD, 
+  export const zapisz<%= upperCamelCase %>Blad = createAction(
+    <%= upperCamelCase %>Actions.ZAPISYWANIE_<%= kebabCase %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const pobierz<%= CN %> = createAction(
-    <%= CN %>Actions.POBIERANIE_<%= C_N %>,
+  export const pobierz<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_<%= kebabCase %>,
     props<{ idUpowaznionego: string; rodzajIdentyfikatora: RodzajIdentyfikatora }>()
   );
 
-  export const pobierz<%= CN %>Sukces = createAction(
-    <%= CN %>Actions.POBIERANIE_<%= C_N %>_SUKCES, 
-    props<{ payload: <%= CN %> }>()
+  export const pobierz<%= upperCamelCase %>Sukces = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_<%= kebabCase %>_SUKCES, 
+    props<{ payload: <%= upperCamelCase %> }>()
   );
 
-  export const pobierz<%= CN %>Blad = createAction(
-    <%= CN %>Actions.POBIERANIE_<%= C_N %>_BLAD, 
+  export const pobierz<%= upperCamelCase %>Blad = createAction(
+    <%= upperCamelCase %>Actions.POBIERANIE_<%= kebabCase %>_BLAD, 
     props<{ blad: any }>()
   );
   
-  export const wyczysc<%= CN %> = createAction(
-    <%= CN %>Actions.WYCZYSC_<%= C_N %>
+  export const wyczysc<%= upperCamelCase %> = createAction(
+    <%= upperCamelCase %>Actions.WYCZYSC_<%= kebabCase %>
   );
   

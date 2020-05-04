@@ -1,8 +1,8 @@
 import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator';
 
 describe('SlownikiHttpService', () => {
-  let spectator: SpectatorHttp<<%= CN %>HttpService>;
-  const createHttp = createHttpFactory(<%= CN %>HttpService);
+  let spectator: SpectatorHttp<<%= kebabCase %>HttpService>;
+  const createHttp = createHttpFactory(<%= kebabCase %>HttpService);
 
   beforeEach(() => (spectator = createHttp()));
 

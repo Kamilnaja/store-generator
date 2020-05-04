@@ -4,6 +4,7 @@
 
 'use strict';
 var Generator = require('yeoman-generator');
+var Formatter = require('./Formatter');
 
 module.exports = class extends Generator {
   async prompting() {
@@ -11,19 +12,17 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'name',
-        message: 'Your component name',
+        message: 'Your component-name',
         default: this.componentName,
         store: true
       }
     ]);
+    this.log(`If the rule you followed brought you to this,
+     of what use was the rule`)
     this.log(`You have selected options: ${this.answers.name}`);
   };
 
   writing() {
-    this._prepareWrite();
-  }
-
-  _prepareWrite() {
     const paths = [
       `services/store-http.service`,
       "actions/store.actions",
@@ -42,11 +41,12 @@ module.exports = class extends Generator {
       .forEach(item => {
         this.fs.copyTpl(
           this.templatePath(`store/${path}.${item ? item + '.' : ''}ts`),
-          this.destinationPath(`store/${path.replace(/store/, this.answers.name.toLowerCase())}.${item ? item + '.' : ''}ts`),
+          this.destinationPath(`store/${path.replace(/store/,
+            Formatter.lowerCase(this.answers.name))}.${item ? item + '.' : ''}ts`),
           {
-            cN: this.answers.name,
-            CN: this.answers.name.charAt(0).toUpperCase() + this.answers.name.slice(1),
-            C_N: this.answers.name.toUpperCase()
+            separate: Formatter.separateWords(this.answers.name),
+            upperCamelCase: Formatter.upperCamelCase(this.answers.name),
+            kebabCase: Formatter.kebabCase(this.answers.name),
           })
       })
   }

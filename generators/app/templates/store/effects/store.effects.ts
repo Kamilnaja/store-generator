@@ -5,16 +5,16 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
-export class <%= CN %>Effects {
-  pobierzListe<%= CN %>$ = createEffect(() =>
+export class <%= separate %>Effects {
+  pobierzListe<%= separate %>$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(<%= CN %>Actions.pobierzListe<%= CN %>),
+      ofType(<%= separate %>Actions.pobierzListe<%= separate %>),
       switchMap(({ numerStrony }) =>
-        this.<%= cN %>HttpService.pobierzListe<%= CN %>(numerStrony).pipe(
-          map(payload => <%= CN %>Actions.pobierzListe<%= CN %>Sukces({ payload })),
+        this.<%= separate %>HttpService.pobierzListe<%= separate %>(numerStrony).pipe(
+          map(payload => <%= separate %>Actions.pobierzListe<%= separate %>Sukces({ payload })),
           catchError(error =>
             of(
-                <%= CN %>Actions.pobierzListe<%= CN %>Blad({
+                <%= separate %>Actions.pobierzListe<%= separate %>Blad({
                 blad: error.message
               })
             )
@@ -24,18 +24,18 @@ export class <%= CN %>Effects {
     )
   );
 
-  wycofaj<%= CN %>$ = createEffect(() =>
+  wycofaj<%= separate %>$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(<%= CN %>Actions.wycofaj<%= CN %>),
-      switchMap(({ idUpowaznionego, pochodzenie<%= CN %> }) =>
-        this.<%= cN %>HttpService.wycofaj<%= CN %>(id, pochodzenie<%= CN %>).pipe(
+      ofType(<%= separate %>Actions.wycofaj<%= separate %>),
+      switchMap(({ idUpowaznionego, pochodzenie<%= separate %> }) =>
+        this.<%= separate %>HttpService.wycofaj<%= separate %>(id, pochodzenie<%= separate %>).pipe(
           tap(() => {
             this.router.navigate(['/'], { queryParams: { usunieto: id } });
           }),
-          map(() => <%= CN %>Actions.wycofaj<%= CN %>Sukces()),
+          map(() => <%= separate %>Actions.wycofaj<%= separate %>Sukces()),
           catchError(error =>
             of(
-                <%= CN %>Actions.wycofaj<%= CN %>Blad({
+                <%= separate %>Actions.wycofaj<%= separate %>Blad({
                 blad: error.message
               })
             )
@@ -45,19 +45,19 @@ export class <%= CN %>Effects {
     )
   );
 
-  zapisz<%= CN %>$ = createEffect(() =>
+  zapisz<%= separate %>$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(<%= CN %>Actions.zapisz<%= CN %>),
+      ofType(<%= separate %>Actions.zapisz<%= separate %>),
       switchMap(({ params }) =>
-        this.<%= cN %>HttpService.zapisz<%= CN %>(params).pipe(
+        this.<%= separate %>HttpService.zapisz<%= separate %>(params).pipe(
           tap(() => {
-            this.router.navigate(['/uprawnienia/<%= cN %>']);
+            this.router.navigate(['/uprawnienia/<%= separate %>']);
             this.pamiecSesjiService.wyczysc();
           }),
-          map(() => <%= CN %>Actions.zapisz<%= CN %>Sukces()),
+          map(() => <%= separate %>Actions.zapisz<%= separate %>Sukces()),
           catchError(error =>
             of(
-                <%= CN %>Actions.zapisz<%= CN %>Blad({
+                <%= separate %>Actions.zapisz<%= separate %>Blad({
                 blad: error.message
               })
             )
@@ -67,19 +67,19 @@ export class <%= CN %>Effects {
     )
   );
 
-  edytuj<%= CN %> = createEffect(() =>
+  edytuj<%= separate %> = createEffect(() =>
     this.actions$.pipe(
-      ofType(<%= CN %>Actions.edytuj<%= CN %>),
+      ofType(<%= separate %>Actions.edytuj<%= separate %>),
       switchMap(({ params }) =>
-        this.<%= cN %>HttpService.edytuj<%= CN %>(params).pipe(
+        this.<%= separate %>HttpService.edytuj<%= separate %>(params).pipe(
           tap(() => {
             this.router.navigate(['']);
             this.pamiecSesjiService.wyczysc();
           }),
-          map(() => <%= CN %>Actions.edytuj<%= CN %>Sukces()),
+          map(() => <%= separate %>Actions.edytuj<%= separate %>Sukces()),
           catchError(error =>
             of(
-                <%= CN %>Actions.edytuj<%= CN %>Blad({
+                <%= separate %>Actions.edytuj<%= separate %>Blad({
                 blad: error.message
               })
             )
@@ -89,15 +89,15 @@ export class <%= CN %>Effects {
     )
   );
 
-  pobierz<%= CN %>$ = createEffect(() =>
+  pobierz<%= separate %>$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(<%= CN %>Actions.pobierz<%= CN %>),
+      ofType(<%= separate %>Actions.pobierz<%= separate %>),
       switchMap(({ id, rodzajIdentyfikatora }) =>
-        this.<%= cN %>HttpService.pobierz<%= CN %>(id, rodzajIdentyfikatora).pipe(
-          map((payload: <%= CN %>) => <%= CN %>Actions.pobierz<%= CN %>Sukces({ payload })),
+        this.<%= separate %>HttpService.pobierz<%= separate %>(id, rodzajIdentyfikatora).pipe(
+          map((payload: <%= separate %>) => <%= separate %>Actions.pobierz<%= separate %>Sukces({ payload })),
           catchError(error =>
             of(
-                <%= CN %>Actions.pobierz<%= CN %>Blad({
+                <%= separate %>Actions.pobierz<%= separate %>Blad({
                 blad: error.message
               })
             )
@@ -109,7 +109,7 @@ export class <%= CN %>Effects {
 
   constructor(
     private actions$: Actions,
-    private <%= cN %>HttpService: <%= CN %>HttpService,
+    private <%= separate %>HttpService: <%= separate %>HttpService,
     private router: Router,
   ) {}
 }
