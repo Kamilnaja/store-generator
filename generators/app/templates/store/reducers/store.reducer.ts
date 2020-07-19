@@ -67,3 +67,4 @@ export const getBlad = (state: State) => state.blad;
 export const getKryteriaWyszukiwania = (state: State) => state.kryteriaWyszukiwania;
 
 export const getPodpowiedzi = (state: State) => state.podpowiedzi;
+
