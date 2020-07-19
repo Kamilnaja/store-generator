@@ -7,5 +7,3 @@ export const selectLista<%= separate %> = createSelector(select<%= separate %>St
 export const selectLoading = createSelector(select<%= separate %>State, from<%= separate %>.getLoading);
 export const selectBlad = createSelector(select<%= separate %>State, from<%= separate %>.getBlad);
 export const select<%= separate %> = createSelector(select<%= separate %>State, from<%= separate %>.get<%= separate %>);
-
-
