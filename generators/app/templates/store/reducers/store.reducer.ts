@@ -68,3 +68,4 @@ export const getKryteriaWyszukiwania = (state: State) => state.kryteriaWyszukiwa
 
 export const getPodpowiedzi = (state: State) => state.podpowiedzi;
 
+
