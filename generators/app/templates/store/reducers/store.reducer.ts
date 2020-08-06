@@ -2,7 +2,6 @@ import * as <%= upperCamelCase %>Actions from '...actions';
 import { ListaWynikow<%= upperCamelCase %> } from '...interface';
 import { KryteriaWyszukiwania, Podpowiedz } from '...';
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
-import { lowerCamelCase } from '../../../Formatter';
 
 export const <%= lowerCamelCase %>FeatureKey = '<%= name %>';
 
