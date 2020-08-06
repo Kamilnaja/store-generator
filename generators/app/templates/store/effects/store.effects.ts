@@ -5,7 +5,7 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
-export class <%= separate %>Effects {
+export class <%= upperCamelCase %>Effects {
   pobierzListe<%= separate %>$ = createEffect(() =>
     this.actions$.pipe(
       ofType(<%= separate %>Actions.pobierzListe<%= separate %>),
