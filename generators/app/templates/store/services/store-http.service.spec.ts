@@ -1,4 +1,4 @@
-import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator';
+import { createHttpFactory, HttpMethod, SpectatorHttp, Spectator } from '@ngneat/spectator/jest';
 
 describe('SlownikiHttpService', () => {
   let spectator: SpectatorHttp<<%= kebabCase %>HttpService>;

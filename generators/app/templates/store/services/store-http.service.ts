@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class <%= upperCamelCase %>HttpService {
-    private readonly endpointURI = ''
-}
+    private readonly endpointURI = '';
 
-constructor(private httpClient: HttpClient) {}
-
-public pobierzListe(): Observable<<%= kebabCase %>[]> {
-    return this.httpClient.get<<%= kebabCase %>[]>(`${this.endpointURI}/`)
+    constructor(private httpClient: HttpClient) {}
+    
+    public pobierzListe(): Observable<<%= kebabCase %>[]> {
+        return this.httpClient.get<<%= kebabCase %>[]>(`${this.endpointURI}/`)
+    }
 }
