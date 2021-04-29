@@ -3,6 +3,7 @@
 ## USAGE
 
 * Clone repo
+* npm install -g yo
 * Run <code>npm i</code>
 * cd into the repo
 * run <code>npm link </code> if you want use this generator from every directory
